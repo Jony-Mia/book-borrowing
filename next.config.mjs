@@ -24,6 +24,13 @@ const nextConfig = {
         pathname: '/get-zen_doc/271828/pub_695370deb4324747c4b3cf1a_695370de45eb796c907235c1/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
     ],
   },
 };
