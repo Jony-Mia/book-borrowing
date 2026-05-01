@@ -1,15 +1,16 @@
-import { Label, SearchField } from "@heroui/react";
-
+import { Input, InputGroup, Label, SearchField, TextField } from "@heroui/react";
+import {Magnifier} from '@gravity-ui/icons';
 const Search = () => {
     return (
-        <SearchField name="search">
-            <Label>Search</Label>
-            <SearchField.Group>
-                <SearchField.SearchIcon />
-                <SearchField.Input className="w-[280px]" placeholder="Search..." />
-                <SearchField.ClearButton />
-            </SearchField.Group>
-        </SearchField>
+        <TextField className={'w-150 mt-5 mx-auto rounded-5xl '}>
+            <InputGroup>
+                <InputGroup.Prefix>
+                    <Magnifier />
+                <InputGroup.Input className={"p-3"} placeholder="Search by title" />
+                </InputGroup.Prefix>
+            </InputGroup>
+
+        </TextField>
     );
 };
 
