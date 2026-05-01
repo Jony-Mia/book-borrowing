@@ -13,7 +13,7 @@ const Navbar = () => {
                     </div>
                     <ul className="flex items-center gap-8">
                         <li><Link className="text-[#df8620]" href="/">Home</Link></li>
-                        <li><Link className="text-muted" href="/allBook">All Book</Link></li>
+                        <li><Link className="text-muted" href="/all-book">All Book</Link></li>
                     </ul>
                 <div className="space-x-3">
                     <button>Login</button>

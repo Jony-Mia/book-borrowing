@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "description": "Between life and death there is a library, and within that library, the shelves go on forever.",
+    "category": "Story",
+    "available_quantity": 15,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "description": "A heartbreaking coming-of-age story and a surprising tale of possible murder.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "description": "A science fiction story set on the desert planet Arrakis.",
+    "category": "Story",
+    "available_quantity": 22,
+    "image_url": "https://images.pexels.com/photos/2350325/pexels-photo-2350325.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "description": "A lone astronaut must save the earth from disaster.",
+    "category": "Story",
+    "available_quantity": 10,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship.",
+    "category": "Tech",
+    "available_quantity": 5,
+    "image_url": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "description": "Your journey to mastery in software development.",
+    "category": "Tech",
+    "available_quantity": 14,
+    "image_url": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "description": "The big ideas behind reliable, scalable, and maintainable systems.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg"
+  },
+{
+    "id": 8,
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "description": "A series of personal writings by the Roman Emperor on Stoic philosophy.",
+    "category": "Philosophy",
+    "available_quantity": 11,
+    "image_url": "https://images.pexels.com/photos/298660/pexels-photo-298660.jpeg"
+  },
+  {
+    "id": 9,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "A landmark volume in science writing exploring cosmology.",
+    "category": "Science",
+    "available_quantity": 20,
+    "image_url": "https://images.pexels.com/photos/2034892/pexels-photo-2034892.jpeg"
+  },
+  {
+    "id": 10,
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "The story of fifteen billion years of cosmic evolution.",
+    "category": "Science",
+    "available_quantity": 18,
+    "image_url": "https://images.pexels.com/photos/41951/solar-system-planets-neptune-mars-41951.jpeg"
+  },
+{
+    "id": 11,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "description": "A shocking psychological thriller of a woman’s act of violence against her husband.",
+    "category": "Thriller",
+    "available_quantity": 9,
+    "image_url": "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg"
+  },
+  {
+    "id": 12,
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "description": "Explores how biology and history have defined us.",
+    "category": "Science",
+    "available_quantity": 25,
+    "image_url": "https://images.pexels.com/photos/165487/pexels-photo-165487.jpeg"
+  },
+  {
+    "id": 13,
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A dystopian social science fiction novel.",
+    "category": "Story",
+    "available_quantity": 30,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+  },
+  {
+    "id": 14,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A novel about racial inequality told through the eyes of a child.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://images.pexels.com/photos/3316918/pexels-photo-3316918.jpeg"
+  },
+  {
+    "id": 15,
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "description": "How constant innovation creates radically successful businesses.",
+    "category": "Business",
+    "available_quantity": 16,
+    "image_url": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+  },
+  {
+    "id": 16,
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "description": "A guide to improving the design of existing code.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg"
+  },
+  {
+    "id": 17,
+    "title": "Design Patterns",
+    "author": "Erich Gamma",
+    "description": "Elements of reusable object-oriented software.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg"
+  },
+  {
+    "id": 18,
+    "title": "The Gene: An Intimate History",
+    "author": "Siddhartha Mukherjee",
+    "description": "A sweeping history of the quest to decipher the master-code of humans.",
+    "category": "Science",
+    "available_quantity": 11,
+    "image_url": "https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg"
+  },
+  {
+    "id": 19,
+    "title": "Astrophysics for People in a Hurry",
+    "author": "Neil deGrasse Tyson",
+    "description": "A clear introduction to the universe.",
+    "category": "Science",
+    "available_quantity": 28,
+    "image_url": "https://images.pexels.com/photos/355938/pexels-photo-355938.jpeg"
+  },
+  {
+    "id": 20,
+    "title": "Brief Answers to the Big Questions",
+    "author": "Stephen Hawking",
+    "description": "A reflection on the most profound questions of the universe.",
+    "category": "Science",
+    "available_quantity": 14,
+    "image_url": "https://images.pexels.com/photos/355904/pexels-photo-355904.jpeg"
+  }
+]
