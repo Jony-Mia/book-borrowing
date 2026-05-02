@@ -1,56 +1,41 @@
-import { Form, Label, ListBox, Select } from "@heroui/react";
+"use client";
+import { poppins } from "@/app/layout";
+import { Label, ListBox, Select } from "@heroui/react";
+import { useState } from "react";
+import { features } from "../../API/features";
+import { setCatFilter } from "@/app/all-book/page";
 
+export function FilterCheckbox({ catFilter, setCatFilter }) {
 
-export function FilterCheckbox() {
-
+    let [booksCategory, setBooksCategory] = useState(null);
+    let featureData = features()
+    let categoryList = featureData.map(data => data.category)
+    let category = [...new Set(categoryList)]
     return (
-        <Form className="flex flex-col gap-4"
-            onSubmit={(e) => {
-                e.preventDefault();
+        <Select className="md:w-[45%] w-[80%] mx-auto" placeholder="Select one" aria-label="Filter by category">
+            <Select.Trigger>
+                <Select.Value />
+                <Select.Indicator />
+            </Select.Trigger>
+            <Select.Popover>
+                <ListBox>
+                    <ListBox.Item textValue={"All"} onClick={() => setCatFilter("all")} >
+                        All
+                        <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                    {
+                        category.map((value, index) => {
+                            return (
+                                <ListBox.Item onClick={() => setCatFilter(value)} key={index} textValue={value}>
+                                    {value}
+                                    <ListBox.ItemIndicator />
+                                </ListBox.Item>
+                            )
+                        })
+                    }
+                </ListBox>
+            </Select.Popover>
+        </Select>
 
-                const formData = new FormData(e.currentTarget);
-                const value = formData.get("plan-validation");
-
-                setMessage(`Your chosen plan is: ${value}`);
-            }}
-        >
-
-            <Select className="w-[256px]" placeholder="Select one">
-                <Label>State</Label>
-                <Select.Trigger>
-                    <Select.Value />
-                    <Select.Indicator />
-                </Select.Trigger>
-                <Select.Popover>
-                    <ListBox>
-                        <ListBox.Item id="florida" textValue="Florida">
-                            Florida
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                        <ListBox.Item id="delaware" textValue="Delaware">
-                            Delaware
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                        <ListBox.Item id="california" textValue="California">
-                            California
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                        <ListBox.Item id="texas" textValue="Texas">
-                            Texas
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                        <ListBox.Item id="new-york" textValue="New York">
-                            New York
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                        <ListBox.Item id="washington" textValue="Washington">
-                            Washington
-                            <ListBox.ItemIndicator />
-                        </ListBox.Item>
-                    </ListBox>
-                </Select.Popover>
-            </Select>
-
-        </Form>
     );
 }

@@ -1,4 +1,5 @@
 
+import { poppins } from '@/app/layout';
 import { BookOpen, LogoFacebook as Facebook, Envelope as Mail, MapPin } from '@gravity-ui/icons';
 import Link from 'next/link';
 // import {Magnifier} from '@gravity-ui/icons';
@@ -6,8 +7,8 @@ import Link from 'next/link';
 const Footer = () => {
     return (
         // <div className='relative'>
-            <footer className="bg-gradient-ink text-parchment absolute right-0 left-0 m-auto bottom-0 text-white mt-24">
-                <div className="container py-16 grid grid-cols-1 mx-auto md:grid-cols-4 gap-10">
+            <footer className={`bg-gradient-ink text-parchment p-8 right-0 left-0 m-auto bottom-0 text-white mt-24 ${poppins.className}`}>
+                <div className=" py-16 grid grid-cols-1 mx-auto md:grid-cols-4 gap-10">
                     <div className="md:col-span-1">
                         <div className="flex items-center gap-2 font-serif text-xl font-bold mb-4">
                             <BookOpen className="h-6 w-6 text-accent" />
