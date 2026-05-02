@@ -4,7 +4,6 @@ import { poppins } from "@/app/layout";
 const Search = () => {
     return (
         <>
-
             <TextField className={'md:w-[45%] w-[80%] mt-5 mx-auto rounded-5xl '} aria-label="Search Section">
                 <InputGroup>
                     <InputGroup.Prefix>

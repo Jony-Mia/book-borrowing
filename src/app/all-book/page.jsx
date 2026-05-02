@@ -13,6 +13,7 @@ export let catcher = value => {
 
 const page = () => {
     let [catFilter, setCatFilter] = useState("all")
+    let [search, setSearch] = useState('')
     // const data = catcher()
     let booklist = features()
     let filter = booklist.filter(fil => fil.category === catFilter);
@@ -37,9 +38,9 @@ const page = () => {
             <div className="container mx-auto">
                 {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quia. */}
                 <br />
-                <div className="grid grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 gap-8">
                     {
-                        catFilter === "all"?
+                        catFilter === "all" ?
                             booklist.map((data) => {
                                 console.log(data.category);
                                 return (
@@ -67,6 +68,7 @@ const page = () => {
                                     />
                                 )
                             })
+                        
                     }
                 </div>
             </div>
