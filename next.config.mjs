@@ -31,6 +31,13 @@ const nextConfig = {
         pathname: '/b/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.magnific.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
     ],
   },
 };

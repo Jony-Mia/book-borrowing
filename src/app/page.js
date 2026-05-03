@@ -12,7 +12,7 @@ export default function Home() {
     <Hero/>
     <Marque/>
     <Feature/>
-    {/* <BookCarousel /> */}
+    <BookCarousel />
     <PromoBanner/>
     <Books/>
     </>

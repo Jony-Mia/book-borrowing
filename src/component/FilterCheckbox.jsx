@@ -8,9 +8,9 @@ import { setCatFilter } from "@/app/all-book/page";
 export function FilterCheckbox({ catFilter, setCatFilter }) {
 
     let [booksCategory, setBooksCategory] = useState(null);
-    let featureData = features()
-    let categoryList = featureData.map(data => data.category)
-    let category = [...new Set(categoryList)]
+    let featureData = features();
+    let categoryList = featureData.map(data => data.category);
+    let category = [...new Set(categoryList)];
     return (
         <Select className="md:w-[45%] w-[80%] mx-auto" placeholder="Select one" aria-label="Filter by category">
             <Select.Trigger>
@@ -21,7 +21,7 @@ export function FilterCheckbox({ catFilter, setCatFilter }) {
                 <ListBox>
                     <ListBox.Item textValue={"All"} onClick={() => setCatFilter("all")} >
                         All
-                        <ListBox.ItemIndicator />
+                    <ListBox.ItemIndicator />
                     </ListBox.Item>
                     {
                         category.map((value, index) => {

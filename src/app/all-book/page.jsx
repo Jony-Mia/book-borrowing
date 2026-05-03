@@ -13,8 +13,9 @@ export let catcher = value => {
 
 const page = () => {
     let [catFilter, setCatFilter] = useState("all")
-    let [search, setSearch] = useState('')
-    // const data = catcher()
+    let [search, setSearch] = useState('');
+    let [visible, setVisible] = useState(true);
+
     let booklist = features()
     let filter = booklist.filter(fil => fil.category === catFilter);
 
@@ -24,7 +25,7 @@ const page = () => {
                 <h1 className={`${nunito.className} text-center pt-8 font-semibold text-4xl`}>All Book</h1>
                 <p className={`${poppins.className} text-center text-md mt-5 text-muted`}>Search the catalog or filter by category to find your next read.</p>
                 <div>
-                    <Search />
+                    <Search setVisible={setVisible} setSearch={setSearch} search={search} />
                     <br />
                 </div>
                 <div>
@@ -68,8 +69,8 @@ const page = () => {
                                     />
                                 )
                             })
-                        
                     }
+
                 </div>
             </div>
         </div>

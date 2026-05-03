@@ -2,6 +2,7 @@ import { Button, Card } from "@heroui/react";
 import { features } from "../../API/features";
 import { nunito } from "@/app/layout";
 import Image from "next/image";
+import Link from "next/link";
 
 const Books = () => {
     let books = features();
@@ -11,7 +12,7 @@ const Books = () => {
             <div className="grid grid-cols-5 gap-6">
                 {books.slice(0, 10).map((data) => {
                     return (
-                        <BookCard key={data.id} description={data.description} title={data.title} author={data.author} img={data.image_url} category={data.category} />
+                        <BookCard key={data.id} id={data.id} description={data.description} title={data.title} author={data.author} img={data.image_url} category={data.category} />
                     )
                 })
                 }
@@ -20,7 +21,7 @@ const Books = () => {
     );
 };
 
-const BookCard = ({ title, author, category, img, description }) => {
+const BookCard = ({id, title, author, category, img, description }) => {
 
     return (
         <Card className=" relative shadow">
@@ -32,12 +33,12 @@ const BookCard = ({ title, author, category, img, description }) => {
                 </Card.Title>
                 <Card.Description>
                    {author} <br />
-                    {description}
+                    {/* {description} */}
                 </Card.Description>
             </Card.Header>
             <Card.Footer className="justify-between">
                 {/* <p>8 available</p> */}
-                <Button className={"bg-[#e18e2e]"}>View Book</Button>
+               <Link href={`bookDetails/${id}`}> <Button className={"bg-[#e18e2e]"}>View Book</Button></Link>
             </Card.Footer>
         </Card>
     );

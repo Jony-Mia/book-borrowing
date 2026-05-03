@@ -1,7 +1,13 @@
+"use client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
-import {BookOpen} from '@gravity-ui/icons';
+import { BookOpen } from '@gravity-ui/icons';
+import { authClient, useSession } from "@/lib/auth-client";
+
 const Navbar = () => {
+    async function logout(){
+      await authClient.signOut()
+    }
     return (
         <div>
 
@@ -15,10 +21,25 @@ const Navbar = () => {
                         <li><Link className="text-[#df8620]" href="/">Home</Link></li>
                         <li><Link className="text-muted" href="/all-book">All Book</Link></li>
                     </ul>
-                <div className="space-x-3">
-                    <button>Login</button>
-                    <Button className={"bg-[#df8620] font-semibold rounded-md"}>Sign Up</Button>
-                </div>
+                    <div className="space-x-3">
+                        {
+                            // user ?
+                            //     <>
+                            //         <p>{user.name}</p>
+                            //         <p>{user.email}</p>
+                            //         <Button onClick={()=>logout()} variant="danger">Log Out</Button>
+                            //     </>
+                            //     :
+                                <>
+                                    <Link href={"api/auth/login"}>
+                                        <Button>Login</Button>
+                                    </Link>
+                                    <Link href={"api/auth/signup"}>
+                                        <Button className={"bg-[#df8620] font-semibold rounded-md"}>Sign Up</Button>
+                                    </Link>
+                                </>
+                        }
+                    </div>
                 </header>
             </nav>
 

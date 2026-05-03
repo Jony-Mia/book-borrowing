@@ -8,7 +8,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { features } from '../../API/features';
 import Image from 'next/image';
-
+import banner1 from "@/assets/book-banner.jpg"
+import banner2 from "@/assets/book-banner-2.jpg"
+import banner3 from "@/assets/banner-3.jpg"
+import banner4 from "@/assets/banner-4.avif"
 const BookCarousel = () => {
   let bookList = features();
   return (
@@ -19,78 +22,28 @@ const BookCarousel = () => {
   );
 };
 
-// Basic Inline Styles for Demo
-const cardStyle = {
-  background: '#fff',
-  borderRadius: '12px',
-  overflow: 'hidden',
-  boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column'
-};
-
 
 
 export const Slider = ({books}) => {
   return (
     <>
-     <section className="w-full max-w-7xl mx-auto py-12 px-6">
+     <section className="w-full mx-auto py-12 px-6">
       <h2 className="text-3xl font-bold mb-8 text-center">Featured Collection</h2>
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={25}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true, dynamicBullets: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 },
-        }}
-        className="pb-14"
-      >
-        {books.map((book) => (
-          <SwiperSlide key={book.id}>
-            <Card className="w-full h-[450px] border-none">
-              <CardHeader className="absolute z-10 top-2 flex-col items-start gap-2">
-                <Chip 
-                  variant="shadow" 
-                  color="secondary" 
-                  size="sm" 
-                  className="capitalize"
-                >
-                  {book.category}
-                </Chip>
-                <h4 className="text-white/90 font-bold text-xl drop-shadow-lg leading-tight">
-                  {book.title}
-                </h4>
-              </CardHeader>
-
-              <img
-                alt={book.title}
-                className="z-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                src={book.image_url}
-              />
-
-              <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100 justify-between">
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/80">By {book.author}</p>
-                  {/* <p className="text-tiny text-white/60">{book.available_quantity} in stock</p> */}
-                </div>
-                <Button 
-                  radius="full" 
-                  size="sm" 
-                  color="primary"
-                  variant="solid"
-                >
-                  Read Now
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
-        ))}
+        
+ <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+        <SwiperSlide className=''>
+          <Image alt="book image" src={banner1} width={"1920"} className='w-full object-cover ' />
+        </SwiperSlide>
+        <SwiperSlide className=''>
+          <Image alt="book image" src={banner2} width={"1220"} height={"720"} className='w-full object-cover ' />
+        </SwiperSlide>
+        <SwiperSlide className=''>
+          <Image alt="book image" src={banner3} width={"1920"} height={"720"}  className='w-full object-cover ' />
+        </SwiperSlide>
+        <SwiperSlide className=''>
+          <Image alt="book image" src={banner4} width={"1920"} height={"720"}  className='w-full object-cover ' />
+        </SwiperSlide>
+    
       </Swiper>
     </section>
   
