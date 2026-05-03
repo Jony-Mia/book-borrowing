@@ -17,7 +17,7 @@ const Search = ({ catFilter, setSearch, setVisible }) => {
                     </InputGroup.Prefix >
                         <InputGroup.Input onChange={searching} className={"p-3 w-full"} placeholder="Search by title" />
                     <InputGroup.Suffix className="bg-[#fe9a00] text-white">
-                    <Button className={`${poppins.className}`}>Search</Button>
+                    <Button variant="ghost" className={`${poppins.className}`}>Search</Button>
                     </InputGroup.Suffix>
                 </InputGroup>
             </TextField>

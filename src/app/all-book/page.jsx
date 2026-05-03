@@ -23,7 +23,7 @@ const page = () => {
         <div className="bg-[#f9f6f1bc] p-5">
             <div className="container mx-auto">
                 <h1 className={`${nunito.className} text-center pt-8 font-semibold text-4xl`}>All Book</h1>
-                <p className={`${poppins.className} text-center text-md mt-5 text-muted`}>Search the catalog or filter by category to find your next read.</p>
+                {/* <p className={`${poppins.className} text-center text-md mt-5 text-muted`}>Search the catalog or filter by category to find your next read.</p> */}
                 <div>
                     <Search setVisible={setVisible} setSearch={setSearch} search={search} />
                     <br />

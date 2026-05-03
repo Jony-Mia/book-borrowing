@@ -27,7 +27,7 @@ const BookCarousel = () => {
 export const Slider = ({books}) => {
   return (
     <>
-     <section className="w-full mx-auto py-12 px-6">
+     <section className="w-full mx-auto px-1">
       <h2 className="text-3xl font-bold mb-8 text-center">Featured Collection</h2>
         
  <Swiper pagination={true} modules={[Pagination]} className="mySwiper">

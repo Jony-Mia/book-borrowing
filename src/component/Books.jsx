@@ -7,9 +7,9 @@ import Link from "next/link";
 const Books = () => {
     let books = features();
     return (
-        <div className="my-5 container mx-auto">
+        <div className="my-5 container mx-auto px-5">
             <h1 className={`${nunito.className} font-bold text-3xl text-center block`}> Books </h1>
-            <div className="grid grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-6">
                 {books.slice(0, 10).map((data) => {
                     return (
                         <BookCard key={data.id} id={data.id} description={data.description} title={data.title} author={data.author} img={data.image_url} category={data.category} />

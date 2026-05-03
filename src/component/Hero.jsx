@@ -6,9 +6,9 @@ import { ArrowChevronRight } from "@gravity-ui/icons";
 const Hero = () => {
     return (
         <div className="bg-[#f3ecdf]">
-            <div className="grid-cols-2 grid container m-auto">
-                <div className="flex flex-col justify-center">
-                    <h1 className={`${robotoMono.className} text-7xl font-bold leading-20 `} >Find Your <br /> <span className="italic text-[#df8620]">Next Read</span> </h1>
+            <div className="lg:grid-cols-2 grid-cols-1 grid container m-auto">
+                <div className="flex flex-col justify-center p-4">
+                    <h1 className={`${robotoMono.className} md:text-5xl sm:text-3xl text-4xl lg:text-7xl font-bold lg:leading-20 `} >Find Your <br /> <span className="italic text-[#df8620]">Next Read</span> </h1>
                     <br />
                     <p className={`w-[70%] ${poppins.className} text-muted text-lg`}>Borrow from a curated collection of stories, science, and tech. Every great journey begins between two covers — yours starts here.</p>
                     <br />
