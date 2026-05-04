@@ -1,12 +1,13 @@
 import { Button, Card } from "@heroui/react";
+import Image from "next/image";
 import Link from "next/link";
 
-const SideCard = ({title, author, category, img, }) => {
+const SideCard = ({title, author, category, img }) => {
 
     return (
         <Card className=" relative shadow">
             <Button className={"top-2 absolute right-2 bg-blue-900 "}>{category}</Button>
-            <img src={img} className="aspect-square rounded-2xl" />
+            <Image src={img} alt={title || "Book cover"} className="aspect-square rounded-2xl" width={300} height={300} />
             <Card.Header>
                 <Card.Title>{title}</Card.Title>
                 <Card.Description>

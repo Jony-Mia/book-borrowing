@@ -1,13 +1,8 @@
 "use client";
-import { poppins } from "@/app/layout";
-import { Label, ListBox, Select } from "@heroui/react";
-import { useState } from "react";
+import { ListBox, Select } from "@heroui/react";
 import { features } from "../../API/features";
-import { setCatFilter } from "@/app/all-book/page";
 
 export function FilterCheckbox({ catFilter, setCatFilter }) {
-
-    let [booksCategory, setBooksCategory] = useState(null);
     let featureData = features();
     let categoryList = featureData.map(data => data.category);
     let category = [...new Set(categoryList)];

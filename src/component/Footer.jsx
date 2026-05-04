@@ -1,63 +1,159 @@
-import { poppins } from '@/app/layout';
-import { BookOpen, LogoFacebook as Facebook, Envelope as Mail, MapPin } from '@gravity-ui/icons';
+import { poppins, nunito } from '@/app/layout';
+import { BookOpen, LogoFacebook as Facebook, Envelope as Mail, LogoGithub as Github  } from '@gravity-ui/icons';
 import Link from 'next/link';
 
 const Footer = () => {
     return (
-        // <div className='relative'>
-            <footer className={`bg-black p-8 m-auto text-white mt-15 ${poppins.className}`}>
-                <div className=" py-16 grid grid-cols-1 mx-auto md:grid-cols-4 gap-10">
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 font-serif text-xl font-bold mb-4">
-                            <BookOpen className="h-6 w-6 text-[#fe9a00]" />
-                            <span>Lumen Library</span>
+        <footer className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white mt-20 ${poppins.className}`}>
+            <div className="container mx-auto px-6 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    {/* Brand Section */}
+                    <div className="lg:col-span-1">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-2 rounded-xl">
+                                <BookOpen className="h-6 w-6 text-white" />
+                            </div>
+                            <span className={`${nunito.className} text-xl font-bold`}>Lumen Library</span>
                         </div>
-                        <p className="text-sm text-parchment/70 leading-relaxed">
-                            A modern digital reading room — curated stories, science, and tech, ready to borrow anytime.
+                        <p className="text-slate-300 leading-relaxed mb-6">
+                            Your digital sanctuary for stories, knowledge, and imagination. Discover, borrow, and explore a world of books at your fingertips.
                         </p>
-                    </div>
-
-                    <div>
-                        <h4 className="font-serif text-base font-semibold mb-4 text-accent">Explore</h4>
-                        <ul className="space-y-2 text-sm text-parchment/80">
-                            <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-                            <li><Link href="/books" className="hover:text-accent transition-colors">All Books</Link></li>
-                            <li><Link href="/profile" className="hover:text-accent transition-colors">My Profile</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-serif text-base font-semibold mb-4 text-accent">Contact Us</h4>
-                        <ul className="space-y-2 text-sm text-parchment/80">
-                            <li className="flex items-start gap-2">
-                                <Mail className="h-4 w-4 mt-0.5 text-[#fe9a00]" />
-                                <span>hello@lumenlibrary.app</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <MapPin className="h-4 w-4 mt-0.5 text-[#fe9a00]" />
-                                <span>14 Inkwell Lane, Reading Room District</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-serif text-base font-semibold mb-4 text-accent">Follow</h4>
-                        <div className="flex gap-3">
-                            <Link href="/" aria-label="Facebook" className="w-10 h-10 rounded-full border border-parchment/20 flex items-center justify-center hover:bg-accent hover:text-ink hover:border-accent transition-colors">
+                        <div className="flex gap-4">
+                            <Link
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#df8620] transition-colors duration-300"
+                                aria-label="Facebook"
+                            >
                                 <Facebook className="h-4 w-4" />
+                            </Link>
+                            
+                            <Link
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#df8620] transition-colors duration-300"
+                                aria-label="GitHub"
+                            >
+                                <Github className="h-4 w-4" />
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="border-t border-parchment/10">
-                    <div className="container py-5 text-center text-xs text-parchment/60">
-                        {/* © {new Date().getFullYear()} Lumen Library — Built with care for readers everywhere. */}
-                        All right reserved by Jony Mia
+
+                    {/* Quick Links */}
+                    <div>
+                        <h4 className={`${nunito.className} text-lg font-semibold mb-6 text-[#df8620]`}>Quick Links</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link href="/" className="text-slate-300 hover:text-[#df8620] transition-colors duration-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/all-book" className="text-slate-300 hover:text-[#df8620] transition-colors duration-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    All Books
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/profile" className="text-slate-300 hover:text-[#df8620] transition-colors duration-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    My Profile
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/borrowed" className="text-slate-300 hover:text-[#df8620] transition-colors duration-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    My Borrowed Books
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Categories */}
+                    <div>
+                        <h4 className={`${nunito.className} text-lg font-semibold mb-6 text-[#df8620]`}>Categories</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <span className="text-slate-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    Fiction & Literature
+                                </span>
+                            </li>
+                            <li>
+                                <span className="text-slate-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    Science & Technology
+                                </span>
+                            </li>
+                            <li>
+                                <span className="text-slate-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    History & Biography
+                                </span>
+                            </li>
+                            <li>
+                                <span className="text-slate-300 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-[#df8620] rounded-full"></span>
+                                    Self-Help & Wellness
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Contact & Newsletter */}
+                    <div>
+                        <h4 className={`${nunito.className} text-lg font-semibold mb-6 text-[#df8620]`}>Stay Connected</h4>
+                        <div className="space-y-4">
+                            <div className="flex items-start gap-3">
+                                <Mail className="h-5 w-5 text-[#df8620] mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <p className="text-slate-300 text-sm">hello@lumenlibrary.app</p>
+                                    <p className="text-slate-400 text-xs">We reply within 24 hours</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                {/* <MapPin className="h-5 w-5 text-[#df8620] mt-0.5 flex-shrink-0" /> */}
+                                <div>
+                                    <p className="text-slate-300 text-sm">14 Inkwell Lane</p>
+                                    <p className="text-slate-400 text-xs">Reading Room District</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Newsletter Signup */}
+                        <div className="mt-6">
+                            <p className="text-slate-300 text-sm mb-3">Get weekly reading recommendations</p>
+                            <div className="flex gap-2">
+                                <input
+                                    type="email"
+                                    placeholder="Your email"
+                                    className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-[#df8620] transition-colors"
+                                />
+                                <button className="px-4 py-2 bg-gradient-to-r from-[#df8620] to-[#fe9a00] text-white rounded-lg hover:shadow-lg transition-all duration-300 font-medium">
+                                    Join
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </footer>
-        // </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="border-t border-slate-700">
+                <div className="container mx-auto px-6 py-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-slate-400 text-sm">
+                            © {new Date().getFullYear()} Lumen Library. Crafted with ❤️ for book lovers everywhere.
+                        </p>
+                        <div className="flex items-center gap-6 text-sm text-slate-400">
+                            <Link href="#" className="hover:text-[#df8620] transition-colors">Privacy Policy</Link>
+                            <Link href="#" className="hover:text-[#df8620] transition-colors">Terms of Service</Link>
+                            <span>All rights reserved by Jony Mia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 };
 
-export default Footer
+export default Footer;

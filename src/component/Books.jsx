@@ -63,7 +63,7 @@ const BookCard = ({id, title, author, category, img, description, data }) => {
                 {/* <p>8 available</p> */}
                {/* <Button className={"bg-[#e18e2e]"} onClick={()=>setBookList([...bookList,data])} >Borrow Book</Button> */}
                <BorrowButton setBookList={setBookList} data={data} bookList={[...bookList,data]}/>
-                <Link href={`bookDetails/${id}`}> <Button variant="primary" >View Book</Button></Link>
+                <Link href={`/bookDetails/${id}`}> <Button variant="primary" >View Book</Button></Link>
                
             </Card.Footer>
         </Card>

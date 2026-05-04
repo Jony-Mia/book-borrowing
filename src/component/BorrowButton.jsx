@@ -1,8 +1,6 @@
 "use client";
-import { BookContext } from "@/context/BookProvider";
 import { BookOpen } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
-import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const BorrowButton = ({data, setBookList, bookList}) => {

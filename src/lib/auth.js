@@ -5,6 +5,7 @@ import dns from "node:dns/promises"
 dns.setServers(["1.1.1.1","8.8.8.8"])
 
 const client = new MongoClient(process.env.AUTH_DB_URI);
+await client.connect();
 const db = client.db("book-borrowing");
 
 export const auth = betterAuth({

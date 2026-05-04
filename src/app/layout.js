@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import  Footer  from "@/component/Footer";
 import BookProvider from "@/context/BookProvider";
+import AuthGuard from "@/component/AuthGuard";
 
 export const roboto = Roboto({
   subsets: ["latin"]
@@ -25,11 +26,13 @@ export default function RootLayout({ children }) {
       className={` ${poppins.className} h-full antialiased`}
     >
       <body className="min-h-full relative flex flex-col">
-        <Navbar/>
-        <BookProvider>
-          {children}
-        </BookProvider>
-        <Footer/>
+        <AuthGuard>
+          <Navbar/>
+          <BookProvider>
+            {children}
+          </BookProvider>
+          <Footer/>
+        </AuthGuard>
         </body>
     </html>
   );
