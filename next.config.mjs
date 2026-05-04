@@ -5,6 +5,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'heroui-assets.nyc3.cdn.digitaloceanspaces.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
+      {
+        protocol: 'https',
         hostname: 'content.twinkl.co.uk',
         port: '',
         pathname: '/website/uploaded/**',
@@ -34,6 +41,13 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'img.magnific.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
         port: '',
         pathname: '/**',
         search: '',

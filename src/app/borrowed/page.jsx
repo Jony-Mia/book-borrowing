@@ -1,23 +1,27 @@
 "use client";
-import { Button, Card } from "@heroui/react";
-import { features } from "../../API/features";
-import { nunito } from "@/app/layout";
-import Image from "next/image";
-import Link from "next/link";
-import { Person } from "@gravity-ui/icons";
-import { BookContext } from "@/context/BookProvider";
-import { useContext } from "react";
-import BorrowButton from "./BorrowButton";
+import { BookContext } from '@/context/BookProvider';
+import { Person } from '@gravity-ui/icons';
+import { Button, Card } from '@heroui/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useContext } from 'react';
+import { nunito } from '../layout';
 
-const Books = () => {
-      
-    
-    let books = features();
+
+const Borrowed = () => {
+    let [bookList, setBookList] = useContext(BookContext)
+      if(bookList.length===0){
+        return (
+            <div className='h-screen flex items-center justify-center'>
+                <p className=" ">No book Borrowed</p>
+            </div>
+        )
+      }
     return (
-        <div className="my-5 container mx-auto px-5">
+        <div className="my-5 mt-10 container mx-auto px-5">
             <h1 className={`${nunito.className} font-bold text-3xl text-center block`}> Books </h1>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-6">
-                {books.slice(0, 10).map((data) => {
+                {bookList.slice(0, 10).map((data) => {
                     return (
                         <BookCard 
                         data={data} 
@@ -38,12 +42,6 @@ const Books = () => {
 };
 
 const BookCard = ({id, title, author, category, img, description, data }) => {
-    let [bookList, setBookList] = useContext(BookContext)
-    
-    let borrowBook=()=>{
-        console.log(bookList);
-        setBookList([...bookList,data])
-    }
     
     return (
         <Card className=" relative shadow">
@@ -62,11 +60,10 @@ const BookCard = ({id, title, author, category, img, description, data }) => {
             <Card.Footer className="justify-between">
                 {/* <p>8 available</p> */}
                {/* <Button className={"bg-[#e18e2e]"} onClick={()=>setBookList([...bookList,data])} >Borrow Book</Button> */}
-               <BorrowButton setBookList={setBookList} data={data} bookList={[...bookList,data]}/>
                 <Link href={`bookDetails/${id}`}> <Button variant="primary" >View Book</Button></Link>
                
             </Card.Footer>
         </Card>
     );
 }
-export default Books;
+export default Borrowed;

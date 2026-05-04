@@ -1,29 +1,28 @@
 "use client";
 import { authClient, signIn } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
-import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
+import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 
 function SignUpForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const dataList = Object.fromEntries(formData.entries())
-    const { data, error } = await authClient.signUp.email({
+    const { data, error } = await authClient.signIn.email({
       email: dataList.email,
-      name: dataList.username,
       password: dataList.password,
       callbackURL: "/"
     })
 
+    console.log(data, error);
   };
 
+
   return (
+
     <>
-      <Form className="flex w-96 flex-col m-auto p-4 shadow rounded-2xl gap-4 mt-10" onSubmit={onSubmit}>
-        <TextField name="username" isRequired>
-          <Label>Enter Name</Label>
-          <Input placeholder="Username" className={"px-5 py-3"} />
-        </TextField>
+      <Form className="flex w-96 flex-col  shadow m-auto gap-4 mt-26 p-4 rounded-2xl" onSubmit={onSubmit}>
+
         <TextField
           isRequired
           name="email"
@@ -54,13 +53,13 @@ function SignUpForm() {
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" className={"px-5 py-3"} />
-          <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
           <FieldError />
         </TextField>
 
         <div className="flex gap-2">
           <Button type="submit" className={"bg-[#fe9a00] text-white"}>
-            Sign  Up
+            <Check />
+            Log In
           </Button>
         </div>
 

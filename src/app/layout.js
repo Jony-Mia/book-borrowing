@@ -1,8 +1,8 @@
-import { Geist, Geist_Mono, Nunito, Poppins, Roboto, Roboto_Mono } from "next/font/google";
+import { Nunito, Poppins, Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import  Footer  from "@/component/Footer";
-
+import BookProvider from "@/context/BookProvider";
 
 export const roboto = Roboto({
   subsets: ["latin"]
@@ -17,20 +17,18 @@ export const robotoMono = Roboto_Mono({
 export const nunito = Nunito({
   subsets: ["latin"]
 })
-// export const metadata = {
-//   title: "Book Borrow",
-//   description: "Borrow Your desire book",
-// };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={` h-full antialiased`}
+      className={` ${poppins.className} h-full antialiased`}
     >
       <body className="min-h-full relative flex flex-col">
         <Navbar/>
-        {children}
+        <BookProvider>
+          {children}
+        </BookProvider>
         <Footer/>
         </body>
     </html>
