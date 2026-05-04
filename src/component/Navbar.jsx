@@ -5,7 +5,8 @@ import { Bars, BookOpen, Person, ArrowRightFromSquare } from '@gravity-ui/icons'
 import { authClient, useSession } from "@/lib/auth-client";
 import { usePathname, useRouter } from "next/navigation";
 import { nunito } from "@/app/layout";
-
+import BookLogo from "@/assets/book-logo.png"
+import Image from "next/image";
 const Navbar = () => {
     const { data } = useSession();
     const path = usePathname();
@@ -32,8 +33,9 @@ const Navbar = () => {
                 <header className="flex h-16 items-center justify-between px-6">
                     <div className="flex items-center gap-3">
                         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                            <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-2 rounded-xl">
-                                <BookOpen className="h-6 w-6 text-white" />
+                            <div className=" p-2 rounded-xl">
+                                {/* <BookOpen className="h-6 w-6 text-white" /> */}
+                                <Image src={BookLogo} alt={"Book Logo"} height="50" width="50" className="rounded-full" />
                             </div>
                             <span className={`${nunito.className} text-xl font-bold text-slate-900`}>Lumen Library</span>
                         </Link>
@@ -155,6 +157,8 @@ const Navbar = () => {
                                     <Bars className="h-5 w-5" />
                                 {/* </Button> */}
                             </DropdownTrigger>
+                            <Dropdown.Popover>
+                            
                             <DropdownMenu aria-label="Navigation menu">
                                 <DropdownItem key="home" as={Link} href="/">
                                     <span className={path === '/' ? 'text-[#df8620] font-semibold' : ''}>Home</span>
@@ -178,11 +182,13 @@ const Navbar = () => {
                                     </DropdownItem>
                                 )}
                             </DropdownMenu>
+                            </Dropdown.Popover>
                         </Dropdown>
 
                         <Link href="/" className="flex items-center gap-2">
                             <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-1.5 rounded-lg">
-                                <BookOpen className="h-5 w-5 text-white" />
+                                {/* <BookOpen className="h-5 w-5 text-white" /> */}
+                                <Image src={BookLogo} width="50" height="50" alt="book logo" className="rounded-full" />
                             </div>
                             <span className={`${nunito.className} text-lg font-bold text-slate-900`}>Lumen</span>
                         </Link>

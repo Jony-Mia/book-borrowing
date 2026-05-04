@@ -102,12 +102,7 @@ function SignUpForm() {
                     <FieldError />
                   </TextField>
                   
-                  <TextField isRequired name="email" type="email" validate={(value) => {
-                    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-                      return "Please enter a valid email address";
-                    }
-                    return null;
-                  }} className="">
+                  <TextField isRequired name="email" type="email"  className="">
                     <Label className="text-sm font-semibold">Email</Label>
                     <Input placeholder="your@email.com" className="rounded-xl" />
                     <FieldError />
@@ -130,7 +125,7 @@ function SignUpForm() {
                   </Button>
           
                   <p className="text-center text-sm text-muted">
-                    Don&apos;t have an account? <Link href="/signup" className="text-[#df8620] font-semibold hover:underline">Sign up</Link>
+                    Don't have an account? <Link href="/signup" className="text-[#df8620] font-semibold hover:underline">Sign up</Link>
                   </p>
                 </Form>
               </div>

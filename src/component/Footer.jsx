@@ -1,17 +1,19 @@
 import { poppins, nunito } from '@/app/layout';
-import { BookOpen, LogoFacebook as Facebook, Envelope as Mail, LogoGithub as Github  } from '@gravity-ui/icons';
+import { BookOpen, LogoFacebook as Facebook, Envelope as Mail, MapPin, LogoGithub as Github, Twitter } from '@gravity-ui/icons';
 import Link from 'next/link';
+import BookLogo from "@/assets/book-logo.png"
+import Image from 'next/image'
 
 const Footer = () => {
     return (
-        <footer className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white mt-20 ${poppins.className}`}>
+        <footer className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white  ${poppins.className}`}>
             <div className="container mx-auto px-6 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {/* Brand Section */}
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-2 rounded-xl">
-                                <BookOpen className="h-6 w-6 text-white" />
+                            <div className=" p-2 rounded-xl">
+                                <Image src={BookLogo} alt={"Book Logo"} height="50" width="50" />
                             </div>
                             <span className={`${nunito.className} text-xl font-bold`}>Lumen Library</span>
                         </div>
@@ -26,7 +28,7 @@ const Footer = () => {
                             >
                                 <Facebook className="h-4 w-4" />
                             </Link>
-                            
+
                             <Link
                                 href="#"
                                 className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#df8620] transition-colors duration-300"
@@ -106,20 +108,20 @@ const Footer = () => {
                             <div className="flex items-start gap-3">
                                 <Mail className="h-5 w-5 text-[#df8620] mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="text-slate-300 text-sm">hello@lumenlibrary.app</p>
+                                    <p className="text-slate-300 text-sm">ajonymia321@gmail.com</p>
                                     <p className="text-slate-400 text-xs">We reply within 24 hours</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
-                                {/* <MapPin className="h-5 w-5 text-[#df8620] mt-0.5 flex-shrink-0" /> */}
+                                <MapPin className="h-5 w-5 text-[#df8620] mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="text-slate-300 text-sm">14 Inkwell Lane</p>
+                                    <p className="text-slate-300 text-sm">Narsingdi, Dhaka, Bangladesh</p>
                                     <p className="text-slate-400 text-xs">Reading Room District</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Newsletter Signup */}
+                        {/* Newsletter Signup
                         <div className="mt-6">
                             <p className="text-slate-300 text-sm mb-3">Get weekly reading recommendations</p>
                             <div className="flex gap-2">
@@ -132,7 +134,7 @@ const Footer = () => {
                                     Join
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

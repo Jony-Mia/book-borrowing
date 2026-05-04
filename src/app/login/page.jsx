@@ -38,24 +38,19 @@ function LoginForm() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f3ecdf] to-[#faf7f2] p-4">
       <Form className="w-full max-w-md bg-white shadow-2xl p-8 rounded-3xl space-y-6" onSubmit={onSubmit}>
         <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
+          {/* <div className="flex justify-center mb-4">
             <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-3 rounded-full">
               
               <FaceSmile/>
             </div>
-          </div>
+          </div> */}
           <h2 className="text-2xl font-bold text-[#333] mb-2">Welcome Back</h2>
           <p className="text-muted text-sm">Log in to continue to your library</p>
         </div>
 
         {errorMessage && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">{errorMessage}</div>}
 
-        <TextField isRequired name="email" type="email" validate={(value) => {
-          if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-            return "Please enter a valid email address";
-          }
-          return null;
-        }} className="">
+        <TextField isRequired name="email" type="email" className="">
           <Label className="text-sm font-semibold">Email</Label>
           <Input placeholder="your@email.com" className="rounded-xl" />
           <FieldError />
@@ -77,7 +72,7 @@ function LoginForm() {
         </Button>
 
         <p className="text-center text-sm text-muted">
-          Don&apos;t have an account? <Link href="/signup" className="text-[#df8620] font-semibold hover:underline">Sign up</Link>
+          Don't have an account? <Link href="/signup" className="text-[#df8620] font-semibold hover:underline">Sign up</Link>
         </p>
       </Form>
     </div>
