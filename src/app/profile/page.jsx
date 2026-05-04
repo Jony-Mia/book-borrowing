@@ -20,19 +20,7 @@ const Borrowed = () => {
             <br />
 
             <div>
-                <div className='flex items-center gap-3'>
-                    <Avatar size='lg'>
-                        <Avatar.Image
-                            alt="Small Avatar"
-                            src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"
-                        />
-                        <Avatar.Fallback>SM</Avatar.Fallback>
-                    </Avatar>
-                    <div>
-                        <h1 className={`${nunito.className}  text-3xl `}> {user?.name} </h1>
-                        <p>{user?.email}</p>
-                    </div>
-                </div>
+               c
             </div>
             <br />
             <Separator />

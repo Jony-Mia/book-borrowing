@@ -1,10 +1,11 @@
 "use client";
-import { Button, Dropdown, Label } from "@heroui/react";
+import { Avatar, Button, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
 import { Bars, BookOpen } from '@gravity-ui/icons';
 import { authClient, useSession } from "@/lib/auth-client";
 import { redirect, usePathname } from "next/navigation";
-
+import { ArrowRightFromSquare } from '@gravity-ui/icons';
+import { nunito } from "@/app/layout";
 const Navbar = () => {
     let { data } = useSession()
     let path = usePathname();
@@ -12,8 +13,8 @@ const Navbar = () => {
     async function logout() {
         await authClient.signOut()
         redirect("/login")
-    } 
-    
+    }
+
     return (
         <div>
 
@@ -24,23 +25,53 @@ const Navbar = () => {
                         <BookOpen className="h-8 w-8" color="#df8620" />
                     </div>
                     <ul className="flex items-center gap-8">
-                        <li><Link className={`${path==='/'?'text-[#df8620]':'text-muted'} `} href="/">Home</Link></li>
-                        <li><Link className={`${path==='/all-book'?'text-[#df8620]':'text-muted'} `} href="/all-book">All Book</Link></li>
-                          {
+                        <li><Link className={`${path === '/' ? 'text-[#df8620]' : 'text-muted'} `} href="/">Home</Link></li>
+                        <li><Link className={`${path === '/all-book' ? 'text-[#df8620]' : 'text-muted'} `} href="/all-book">All Book</Link></li>
+                        {
                             data?.user ?
-                                
-                        <li><Link className={`${path==='/profile'?'text-[#df8620]':'text-muted'} `} href="/profile">Profile</Link></li>
-                        :''
-                          }
+
+                                <li><Link className={`${path === '/profile' ? 'text-[#df8620]' : 'text-muted'} `} href="/profile">Profile</Link></li>
+                                : ''
+                        }
                     </ul>
                     <div className="space-x-3">
                         {
                             data?.user ?
                                 <>
                                     <div className="flex items-center gap-4">
-                                        <p>{data.user.name}</p>
+                                        {/* <p>{data?.user.name}</p> */}
                                         {/* <p>{user.email}</p> */}
-                                        <Button onClick={() => logout()} variant="danger">Log Out</Button>
+
+                                        <div className='flex items-center gap-3'>
+                                            {
+                                                data?.user?.image ? <>
+                                                    <Avatar size='lg'>
+                                                        <Avatar.Image
+                                                            alt="Small Avatar"
+                                                            src={data?.user?.image}
+                                                        />
+                                                        <Avatar.Fallback>SM</Avatar.Fallback>
+                                                    </Avatar>
+                                                </> :
+                                                    <>
+                                                        <Avatar size='lg'>
+                                                            <Avatar.Image
+                                                                alt="Small Avatar"
+                                                                src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"
+                                                            />
+                                                            <Avatar.Fallback>SM</Avatar.Fallback>
+                                                        </Avatar>
+                                                    </>
+                                            }
+                                            <div>
+                                                <h1 className={`${nunito.className}  text-3xl `}> {data?.user?.name} </h1>
+                                                <p>{data?.user?.email}</p>
+                                            </div>
+                                        </div>
+
+                                        <Button onClick={() => logout()} variant="danger">
+                                            <ArrowRightFromSquare />
+                                        </Button>
                                     </div>
                                 </>
                                 :
@@ -82,10 +113,64 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    <ul className="flex items-center gap-4">
+                     <div className="space-x-3">
+                        {
+                            data?.user ?
+                                <>
+                                    <div className="flex items-center gap-4">
+                                        {/* <p>{data?.user.name}</p> */}
+                                        {/* <p>{user.email}</p> */}
+
+                                        <div className='flex items-center gap-3'>
+                                            {
+                                                data?.user?.image ? <>
+                                                    <Avatar size='lg'>
+                                                        <Avatar.Image
+                                                            alt={data?.user?.name}
+                                                            src={data?.user?.image}
+                                                        />
+                                                        <Avatar.Fallback>SM</Avatar.Fallback>
+                                                    </Avatar>
+                                                </> :
+                                                    <>
+                                                        <Avatar size='lg'>
+                                                            <Avatar.Image
+                                                                alt={data?.user?.name}
+                                                                src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"
+                                                            />
+                                                            <Avatar.Fallback>SM</Avatar.Fallback>
+                                                        </Avatar>
+                                                    </>
+                                            }
+                                            <div>
+                                                <h1 className={`${nunito.className}  text-3xl `}> {data?.user?.name} </h1>
+                                                <p>{data?.user?.email}</p>
+                                            </div>
+                                        </div>
+
+                                        <Button onClick={() => logout()} variant="danger">
+                                            <ArrowRightFromSquare />
+                                        </Button>
+                                    </div>
+                                </>
+                                :
+                                <>
+                                    <Link href={"login"}>
+                                        <Button>Login</Button>
+                                    </Link>
+                                    <Link href={"signup"}>
+                                        <Button className={"bg-[#df8620] font-semibold rounded-md"}>Sign Up</Button>
+                                    </Link>
+
+                                    
+                                </>
+                        }
+                    </div>
+
+                    {/* <ul className="flex items-center gap-4">
                         <li><Button>Sign Up</Button></li>
                         <li><Button className="bg-[#fe9a00]">Login</Button></li>
-                    </ul>
+                    </ul> */}
                 </header>
             </nav>
         </div>
