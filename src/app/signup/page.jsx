@@ -17,9 +17,10 @@ function SignUpForm() {
     setLoading(true);
     const formData = new FormData(e.currentTarget);
     const dataList = Object.fromEntries(formData.entries())
+    console.log(dataList)
     const { data, error } = await authClient.signUp.email({
       email: dataList.email,
-      name: dataList.username,
+      name: dataList.name,
       password: dataList.password,
       callbackURL: "/"
     })
@@ -91,12 +92,12 @@ function SignUpForm() {
                       </div>
                     </div> */}
                     <h2 className="text-2xl font-bold text-[#333] mb-2">Welcome Back</h2>
-                    <p className="text-muted text-sm">Log in to continue to your library</p>
+                    <p className="text-muted text-sm">Sign Up to continue to your library</p>
                   </div>
           
                   {errorMessage && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">{errorMessage}</div>}
           
-                  <TextField isRequired name="email" type="text" className="">
+                  <TextField isRequired name="name" type="text" className="">
                     <Label className="text-sm font-semibold">Name</Label>
                     <Input placeholder="Enter your name" className="rounded-xl" />
                     <FieldError />
@@ -125,7 +126,7 @@ function SignUpForm() {
                   </Button>
           
                   <p className="text-center text-sm text-muted">
-                    Don't have an account? <Link href="/signup" className="text-[#df8620] font-semibold hover:underline">Sign up</Link>
+                    Do you have an account? <Link href="/login" className="text-[#df8620] font-semibold hover:underline">Log In</Link>
                   </p>
                 </Form>
               </div>

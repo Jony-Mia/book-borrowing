@@ -186,7 +186,7 @@ const Navbar = () => {
                         </Dropdown>
 
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="bg-gradient-to-r from-[#df8620] to-[#fe9a00] p-1.5 rounded-lg">
+                            <div className=" p-1.5 rounded-lg">
                                 {/* <BookOpen className="h-5 w-5 text-white" /> */}
                                 <Image src={BookLogo} width="50" height="50" alt="book logo" className="rounded-full" />
                             </div>
